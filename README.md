@@ -7,10 +7,8 @@ Usage
 
 Install Yeoman from http://yeoman.io/
 
-How To Run
-=========
-```grunt server```
+```grunt server``` for previewing during development.
 
-Tests
-=====
 ```grunt tests```
+
+```grunt``` compiles the app.
