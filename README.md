@@ -9,8 +9,8 @@ Install Yeoman from http://yeoman.io/
 
 How To Run
 =========
-'''grunt server'''
+```grunt server```
 
 Tests
 =====
-'''grunt tests'''
+```grunt tests```
