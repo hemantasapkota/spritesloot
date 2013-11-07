@@ -7,7 +7,7 @@ Usage
 
 Install Yeoman from http://yeoman.io/
 
-```grunt server``` for previewing during development.
+```grunt server``` for previewing during development. LiveReload is enabled.
 
 ```grunt tests```
 
