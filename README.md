@@ -12,3 +12,5 @@ Install Yeoman from http://yeoman.io/
 ```grunt tests```
 
 ```grunt``` compiles the app.
+
+I use ```Sublime Text 2``` with VIM bindings as the IDE.
