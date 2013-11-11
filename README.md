@@ -13,4 +13,8 @@ Install Yeoman from http://yeoman.io/
 
 ```grunt``` compiles the app.
 
-I use ```Sublime Text 2``` with VIM bindings as the IDE.
+IDE
+===
+Sublime Text 2 - http://www.sublimetext.com/
+
+Brackets - http://brackets.io/
