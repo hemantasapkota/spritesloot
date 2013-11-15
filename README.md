@@ -21,8 +21,17 @@ Update node dependencies
 Update bower components
 '''bower update'''
 
-'''grunt server'''
-
-Tests
+Build
 =====
-'''grunt tests'''
+
+```grunt server``` for previewing during development. LiveReload is enabled.
+
+```grunt tests```
+
+```grunt``` compiles the app.
+
+IDE
+===
+Sublime Text 2 - http://www.sublimetext.com/
+
+Brackets - http://brackets.io/
