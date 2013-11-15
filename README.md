@@ -8,18 +8,15 @@ Prerequisites
 [Yeoman](http://yeoman.io)
 
 Installation
-=========
+============
 
-Get all the dependencies
+Update dependencies first.
 
-'''cd client'''
-
-Update node dependencies
-
-'''npm install'''
-
-Update bower components
-'''bower update'''
+'''
+cd client
+npm install
+bower update
+'''
 
 Build
 =====
