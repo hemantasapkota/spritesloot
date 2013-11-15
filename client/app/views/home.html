@@ -1,0 +1,24 @@
+<div ng-repeat="cluster in clusters | filter:clusterFilter">
+   <div class="container">
+     <div class="cluster-container" style="margin-top:10px;">
+      <div class="cluster">
+         <div class="cluster-heading" style="font-size:28px;font-weight:100">
+          <a href="#/cluster/{{cluster.title}}" class="">{{cluster.title}}</a>
+          <btn class="btn btn-sml btn-success pull-right">Buy this Collection $2.80</btn>
+          <hr style="margin-top:0px;"/>
+         </div>
+
+         <div class="card-list row" >
+          <ul class="list-unstyled list-inline">
+                <li ng-repeat="sprite in cluster.slootItems | limitTo:limitQty" class="span3" style="margin:10px;">
+                  <a href="#/sprites/{{sprite.id}}" >
+                    <div><img ng-src="{{sprite.imgUrl}}" class="img-responsive"></div>
+                    <!-- <div style="margin:5px;">{{sprite.title}}</div> -->
+                  </a>
+                </li>
+          </ul> 
+        </div> <!-- card list -->   
+     </div> <!-- cluster -->
+    </div>  
+  </div>
+</div>

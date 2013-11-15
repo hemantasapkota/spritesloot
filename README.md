@@ -2,13 +2,25 @@ spritesloot
 ===========
 Marketplace for high quality animated sprites for mobile and web games.
 
-Usage
+Prerequisites
 ====
 
-Install Yeoman from http://yeoman.io/
+[Yeoman](http://yeoman.io)
 
-How To Run
+Installation
 =========
+
+Get all the dependencies
+
+'''cd client'''
+
+Update node dependencies
+
+'''npm install'''
+
+Update bower components
+'''bower update'''
+
 '''grunt server'''
 
 Tests
