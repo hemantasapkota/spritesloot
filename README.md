@@ -12,11 +12,11 @@ Installation
 
 Update dependencies first.
 
-'''
+```
 cd client
 npm install
 bower update
-'''
+```
 
 Build
 =====
