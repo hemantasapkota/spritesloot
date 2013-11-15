@@ -23,9 +23,9 @@ Build
 
 ```grunt server``` for previewing during development. LiveReload is enabled.
 
-```grunt tests```
+```grunt tests``` for executing tests.
 
-```grunt``` compiles the app.
+```grunt``` executes tests and compiles the app.
 
 IDE
 ===
