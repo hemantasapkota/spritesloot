@@ -37,12 +37,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Sprites Loot</a>
+         <a class="navbar-brand" href="#">Sprites Loot</a>
         </div>
         
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+
             <li class=""><a href="#">Blog</a></li>
             <li><a href="https://github.com/hemantasapkota/sloot-editor">Sloot Editor</a></li>
           </ul>
@@ -83,6 +87,7 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui/build/angular-ui.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
@@ -113,6 +118,7 @@
         <script src="scripts/directives/b2dwebcanvas.js"></script>
         <!-- endbuild -->
 
+        <!-- build:js scripts/slootLoader.js -->
         <script type="text/javascript" src="custom_components/sloot-loader2/box2d-web.js"></script>
         <script type="text/javascript" src="custom_components/sloot-loader2/slootScreenLoader2.js"></script>
         <script type="text/javascript" src="custom_components/sloot-loader2/boxBody.js"></script>
@@ -120,22 +126,6 @@
         <script type="text/javascript" src="custom_components/sloot-loader2/circleBody.js"></script>
         <script type="text/javascript" src="custom_components/sloot-loader2/entityBody.js"></script>
         <script type="text/javascript" src="custom_components/sloot-loader2/pixi.js"></script>
-
-        <!-- Custom components: Sloot Loader -->
-        <!--
-        <script type="text/javascript" src="custom_components/sloot-loader/box2d.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/embox2d-helpers.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/embox2d-html5canvas-debugDraw.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/embox2d-html5canvas-testbed.js"></script>
-        
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/boxBody.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/circleBody.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/edgeBody.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/entityBody.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/bodyFactory.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/slootEntityLoader.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader/loader/slootScreenLoader.js"></script>
-      -->
 
 </body>
 </html>

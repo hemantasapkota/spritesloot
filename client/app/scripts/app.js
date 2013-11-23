@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoAngularApp', [])
+angular.module('yoAngularApp', ['ui'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/home', {
