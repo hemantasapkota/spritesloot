@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yoAngularApp', ['ui'])
+angular.module('yoAngularApp', ['ui', 'ui.bootstrap'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/home', {

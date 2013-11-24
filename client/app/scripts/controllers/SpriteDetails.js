@@ -17,9 +17,17 @@ angular.module('yoAngularApp')
     // // url is in the form of: sloot-content/Pigs/Pig1.cgs.json
 
     // /* Get the screen file */
-    $scope.screenUrl = 'sloot-content/' +  collectionID + '/' + screenName + '.json';
+    $scope.entityUrl = 'sloot-content/' + collectionID + '/' + spriteID + '.json';
     $scope.entityImgUrl = 'sloot-content/' + collectionID + '/' + spriteID + '.png';
+
+    $scope.screenUrl = 'sloot-content/' +  collectionID + '/' + screenName + '.json';
     $scope.spriteTitle = spriteTitle;
+
+    $http.get($scope.entityUrl).success(function(data) {
+
+        $scope.cgEntityModel = data;
+
+     });
 
   });
 
