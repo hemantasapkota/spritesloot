@@ -11,11 +11,13 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/31a3e72d.main.css">
-</head>
-  <body ng-app="yoAngularApp">
+        <link rel="stylesheet" href="styles/eeea76dd.main.css"/>
+  </head>
+  <body ng-app="spriteslootApp">
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
     <![endif]-->
 
     <!--[if lt IE 9]>
@@ -34,14 +36,12 @@
           </button>
          <a class="navbar-brand" href="#">Sprites Loot</a>
         </div>
-        
+
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-
             <li class="active">
               <a href="#">Home</a>
             </li>
-
             <li class=""><a href="#">Blog</a></li>
             <li><a href="https://github.com/hemantasapkota/sloot-editor">Sloot Editor</a></li>
           </ul>
@@ -57,18 +57,13 @@
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
           <form class="">
-            <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:2" placeholder="Search" class="form-control"></form>
+            <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:2" placeholder="Search" class="form-control">
+          </form>
         </div>
 
         <div ng-view=""></div>
-
     </div> <!-- /container -->
 
-<!--     <div id="footer">
-      <div class="container">
-        <p class="text-muted credit">Copyright. All rights reserved. 2013</p>
-      </div>
-    </div> -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -81,16 +76,14 @@
        ga('send', 'pageview');
     </script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui/build/angular-ui.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-        <script src="scripts/7e110f8b.plugins.js"></script>
+        <script src="scripts/c07337e8.modules.js"></script>
 
-        <script src="scripts/6b865daa.modules.js"></script>
-
-        <script src="scripts/39d8ef2e.scripts.js"></script>
+        <script src="scripts/ea23cf4b.scripts.js"></script>
 
         <!-- build:js scripts/slootLoader.js -->
         <script type="text/javascript" src="custom_components/sloot-loader2/box2d-web.js"></script>
@@ -99,7 +92,5 @@
         <script type="text/javascript" src="custom_components/sloot-loader2/edgeBody.js"></script>
         <script type="text/javascript" src="custom_components/sloot-loader2/circleBody.js"></script>
         <script type="text/javascript" src="custom_components/sloot-loader2/entityBody.js"></script>
-        <script type="text/javascript" src="custom_components/sloot-loader2/pixi.js"></script>
-
 </body>
 </html>

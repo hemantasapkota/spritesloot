@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('yoAngularApp')
-    .controller('SpriteDetailsCtrl', function ($scope, $http, $routeParams) {
+angular.module('spriteslootApp')
+  .controller('SpritedetailCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
     $scope.spriteID = $routeParams.spriteID;
 
@@ -24,10 +24,7 @@ angular.module('yoAngularApp')
     $scope.spriteTitle = spriteTitle;
 
     $http.get($scope.entityUrl).success(function(data) {
+      $scope.cgEntityModel = data;
+    });
 
-        $scope.cgEntityModel = data;
-
-     });
-
-  });
-
+  }]);

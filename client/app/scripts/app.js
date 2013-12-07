@@ -1,6 +1,13 @@
 'use strict';
 
-angular.module('yoAngularApp', ['ui', 'ui.bootstrap'])
+angular.module('spriteslootApp', [
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute',
+  'ui',
+  'ui.bootstrap'
+])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/home', {
@@ -12,8 +19,8 @@ angular.module('yoAngularApp', ['ui', 'ui.bootstrap'])
           controller: 'HomeCtrl'
         })
       .when('/sprites/:spriteID', {
-          templateUrl: 'views/spritedetails.html',
-          controller: 'SpriteDetailsCtrl'
+          templateUrl: 'views/spritedetail.html',
+          controller: 'SpritedetailCtrl'
         })
       .otherwise({
           redirectTo: '/home'

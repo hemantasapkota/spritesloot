@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: ClusterCtrl', function () {
+describe('Controller: SpritedetailCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('yoAngularApp'));
+  beforeEach(module('spriteslootApp'));
 
-  var ClusterCtrl,
+  var SpritedetailCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ClusterCtrl = $controller('ClusterCtrl', {
+    SpritedetailCtrl = $controller('SpritedetailCtrl', {
       $scope: scope
     });
   }));

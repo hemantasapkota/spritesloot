@@ -1,10 +1,18 @@
 'use strict';
 
-angular.module('yoAngularApp')
-  .controller('SearchCtrl', function ($scope) {
+angular.module('spriteslootApp')
+  .controller('SearchCtrl', ['$scope', function ($scope) {
 
-  	$scope.selected = undefined;
+  $scope.selected = undefined;
 
-  	$scope.states = ['Pigs', 'Blocks', 'Birds', 'Runner', 'Jumper', 'BlackBird', 'WhiteBird', 'Coins' ];
+  $scope.states =
+    ['Pigs',
+     'Blocks',
+     'Birds',
+     'Runner',
+     'Jumper',
+     'BlackBird',
+     'WhiteBird',
+     'Coins' ];
 
-  });
+}]);

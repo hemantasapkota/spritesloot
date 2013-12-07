@@ -3,24 +3,18 @@ var entityBody = function() {
 }
 
 entityBody.prototype.ScreenToWorldEnt = function( shape ) {
-	var vx = shape.bounds.x;
-	var vy = shape.bounds.y;
-
-	var hw = (shape.bounds.width / 2);
-	var hh = (shape.bounds.height / 2);
-
-	vx = vx;
-	vy = vy + shape.bounds.height;
-
-	return new b2Vec2( vx / ptmRatio, vy / ptmRatio);
+  var vx = shape.bounds.x;
+  var vy = shape.bounds.y;
+  var hw = (shape.bounds.width / 2);
+  var hh = (shape.bounds.height / 2);
+  vx = vx;
+  vy = vy + shape.bounds.height;
+  return new b2Vec2( vx / ptmRatio, vy / ptmRatio);
 }
 
-/* 
-
+/*
 Return Object:
-
 {cgEntityModel, defaultEntityAnimation, fixtures }
-
 */
 entityBody.prototype.Create = function( shape, bodyDef, fixtureDef, returnObject, onFixtureCreated ) {
 
@@ -77,7 +71,7 @@ entityBody.prototype.Create = function( shape, bodyDef, fixtureDef, returnObject
 				bodyDef.position = position;
 
 				var body = b2World.CreateBody( bodyDef );
-				body.SetUserData(shape);	
+				body.SetUserData(shape);
 
 				//Go through rigid bodies. Each fixture has many rigid bodies
 				$.each(cgFixtureModel.rigidBodies, function(i, rb) {
@@ -92,7 +86,7 @@ entityBody.prototype.Create = function( shape, bodyDef, fixtureDef, returnObject
 
 							vertices[ vindex ] = polygon[v];
 							vindex++;
-						}			
+						}
 
 						var polyShape = new b2PolygonShape;
 						polyShape.SetAsArray( vertices );
@@ -110,5 +104,4 @@ entityBody.prototype.Create = function( shape, bodyDef, fixtureDef, returnObject
 		}
 
 	});
-
 }

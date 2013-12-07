@@ -1,4 +1,4 @@
-var   
+var
   b2Vec2 = Box2D.Common.Math.b2Vec2
 ,  b2AABB = Box2D.Collision.b2AABB
 ,  b2Body = Box2D.Dynamics.b2Body
@@ -11,7 +11,7 @@ var
  var world, ptmRatio;
 
 function MouseJointMgr(world_, ptmRatio_) {
-	world = world_;
+  world = world_;
   ptmRatio = ptmRatio_;
 }
 
@@ -19,13 +19,13 @@ function MouseJointMgr(world_, ptmRatio_) {
     mouseX = (e.clientX - canvasPosition.x) / ptmRatio;
     mouseY = (e.clientY - canvasPosition.y) / ptmRatio;
  };
- 
+
  function getBodyAtMouse() {
     mousePVec = new b2Vec2(mouseX, mouseY);
     var aabb = new b2AABB();
     aabb.lowerBound.Set(mouseX - 0.001, mouseY - 0.001);
     aabb.upperBound.Set(mouseX + 0.001, mouseY + 0.001);
-    
+
     // Query the world for overlapping shapes.
 
     selectedBody = null;
@@ -44,20 +44,18 @@ function MouseJointMgr(world_, ptmRatio_) {
  }
 
 MouseJointMgr.prototype.Init = function() {
-	 document.addEventListener("mousedown", function(e) {
-	    isMouseDown = true;
-	    handleMouseMove(e);
-	    document.addEventListener("mousemove", handleMouseMove, true);
-	 }, true);
-	 
-	 document.addEventListener("mouseup", function() {
-	    document.removeEventListener("mousemove", handleMouseMove, true);
-	    isMouseDown = false;
-	    mouseX = undefined;
-	    mouseY = undefined;
-	 }, true);
-	 
+   document.addEventListener("mousedown", function(e) {
+      isMouseDown = true;
+      handleMouseMove(e);
+      document.addEventListener("mousemove", handleMouseMove, true);
+   }, true);
 
+   document.addEventListener("mouseup", function() {
+      document.removeEventListener("mousemove", handleMouseMove, true);
+      isMouseDown = false;
+      mouseX = undefined;
+      mouseY = undefined;
+   }, true);
 };
 
 MouseJointMgr.prototype.Render = function() {
@@ -74,7 +72,7 @@ MouseJointMgr.prototype.Render = function() {
           body.SetAwake(true);
        }
     }
-    
+
     if(mouseJoint) {
        if(isMouseDown) {
           mouseJoint.SetTarget(new b2Vec2(mouseX, mouseY));
@@ -91,7 +89,7 @@ function getElementPosition(element) {
 
   if (!elem)
     return;
- 
+
   while((typeof(elem) == "object") && (typeof(elem.tagName) != "undefined")) {
      y += elem.offsetTop;
      x += elem.offsetLeft;

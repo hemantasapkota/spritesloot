@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('yoAngularApp')
-.directive('b2dwebcanvas', function () {
+angular.module('spriteslootApp')
+  .directive('b2webcanvas', [function () {
 
       function initB2WebCanvasExecution( cgScreenModel, entImg) {
-
           var  B2VEC2 = Box2D.Common.Math.b2Vec2,
           B2AABB = Box2D.Collision.b2AABB,
           B2BODY = Box2D.Dynamics.b2Body,
@@ -20,7 +19,7 @@ angular.module('yoAngularApp')
           var velocityIterations = cgScreenModel.screenPrefs.worldPrefs.velocityIterations;
           var positionIterations = cgScreenModel.screenPrefs.worldPrefs.positionIterations;
 
-          var world = new B2WORLD (new B2VEC2 (gravityX, gravityY),  true);                 //allow sleep
+          var world = new B2WORLD (new B2VEC2 (gravityX, gravityY),  true);
 
           var returnObjectMap = [];
 
@@ -30,7 +29,6 @@ angular.module('yoAngularApp')
           lb2d.CreateShape(function onFixtureCreated( returnObject ){
             if ( returnObject.shape.editorShapeType === 'ENTITY_SHAPE' ) {
               returnObjectMap[ returnObject.shape.id ] = returnObject;
-
             }
           });
 
@@ -68,38 +66,35 @@ angular.module('yoAngularApp')
             return {x: x, y: y};
           }
 
-         
            //mouse
-         
           var mouseX, mouseY, mousePVec, isMouseDown, selectedBody, mouseJoint;
           var canvasPosition = getElementPosition(document.getElementById('canvas'));
-         
+
           document.addEventListener('mousedown', function(e) {
             isMouseDown = true;
             handleMouseMove(e);
             document.addEventListener('mousemove', handleMouseMove, true);
           }, true);
-         
+
           document.addEventListener('mouseup', function() {
             document.removeEventListener('mousemove', handleMouseMove, true);
             isMouseDown = false;
             mouseX = undefined;
             mouseY = undefined;
           }, true);
-         
+
           function handleMouseMove(e) {
             mouseX = (e.clientX - canvasPosition.x) / ptmRatio;
             mouseY = (e.clientY - canvasPosition.y) / ptmRatio;
           }
-         
+
           function getBodyAtMouse() {
             mousePVec = new B2VEC2(mouseX, mouseY);
             var aabb = new B2AABB();
             aabb.lowerBound.Set(mouseX - 0.001, mouseY - 0.001);
             aabb.upperBound.Set(mouseX + 0.001, mouseY + 0.001);
-            
-            // Query the world for overlapping shapes.
 
+            // Query the world for overlapping shapes.
             selectedBody = null;
             world.QueryAABB(getBodyCB, aabb);
             return selectedBody;
@@ -114,22 +109,18 @@ angular.module('yoAngularApp')
             }
             return true;
           }
-        
+
         //update
           var context = document.getElementById('canvas').getContext('2d');
 
           function drawEntities() {
-
             for (var body = world.m_bodyList; body; body = body.m_next) {
 
               var shape = body.GetUserData();
-
               if ( shape === null ) { continue; }
-
               var shapeRetObject = returnObjectMap[ shape.id ];
 
               if (shape !== null && shape.editorShapeType === 'ENTITY_SHAPE') {
-
                 var pos = body.GetPosition();
 
                 var x = pos.x * ptmRatio;
@@ -139,34 +130,13 @@ angular.module('yoAngularApp')
                 var h = entImg.height;
 
                 context.save();
-
                 context.translate(x, y);
-
                 context.rotate( body.GetAngle()  );
-
                 context.globalAlpha = 0.5;
-
-                var isBoxCollisionShape = shapeRetObject.defaultEntityAnimation.collisionType == 'BOX';
-                var isCircleCollisionShape = shapeRetObject.defaultEntityAnimation.collisionType == 'CIRCLE';
-                var isCustomCollisionShape = shapeRetObject.defaultEntityAnimation.collisionType == 'CUSTOM';
-
                 context.drawImage(entImg, 0, -shape.bounds.height, w, h);
-
-                // if (isBoxCollisionShape) {
-                //   context.drawImage(entImg, 0, 0, w, h);
-                // } else 
-                // if (isCircleCollisionShape) {
-                //   context.drawImage(entImg, 0, -shape.bounds.height, w, h);
-                // } else {
-                //   context.drawImage(entImg, 0, -shape.bounds.height, w, h);
-                // }
-
                 context.restore();
-
               }
-
             }
-
           }
 
           function update() {
@@ -193,18 +163,14 @@ angular.module('yoAngularApp')
                 mouseJoint = null;
               }
             }
-           
+
             world.Step(1 / timeStep, velocityIterations, positionIterations);
-
             world.DrawDebugData();
-
             drawEntities();
-
             world.ClearForces();
           }
 
           window.setInterval(update, 1000 / 60);
-          
         }
 
 
@@ -213,24 +179,16 @@ angular.module('yoAngularApp')
         restrict: 'E',
 
         controller: function($scope, $attrs, $http) {
-
           $http.get($scope.screenUrl).success(function(data) {
-
             $scope.cgScreenModel = data;
 
             var entityImage = new Image();
-            entityImage.src = $scope.entityImgUrl;
 
+            entityImage.src = $scope.entityImgUrl;
             entityImage.onload = function() {
               initB2WebCanvasExecution( $scope.cgScreenModel, entityImage );
             };
-
           });
-
         }
-
-        // link: function postLink(scope, element, attrs) {
-        // }
-
       };
-    });
+  }]);

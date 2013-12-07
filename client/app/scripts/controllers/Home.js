@@ -1,9 +1,11 @@
 'use strict';
 
-angular.module('yoAngularApp')
-  .controller('HomeCtrl', function ($scope, $routeParams, $http) {
+angular.module('spriteslootApp')
+  .controller('HomeCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
-    $http.get('sloot-content/sloot-content.json').success(function(data){
+    $http
+      .get('sloot-content/sloot-content.json')
+      .success(function(data){
 
       $scope.clusters = data.slootCollection;
       $scope.limitQty = 10;
@@ -11,14 +13,13 @@ angular.module('yoAngularApp')
 
       if ($scope.clusterFilter !== undefined)
       {
-        angular.forEach($scope.clusters, function(cluster) {
-
+        angular
+        .forEach($scope.clusters, function(cluster) {
           if (cluster.title === $scope.clusterFilter) {
             $scope.limitQty = cluster.slootItems.length;
           }
-
         });
       }
-
     });
-  });
+
+  }]);
