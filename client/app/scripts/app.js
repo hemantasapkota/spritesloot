@@ -22,6 +22,10 @@ angular.module('spriteslootApp', [
           templateUrl: 'views/spritedetail.html',
           controller: 'SpritedetailCtrl'
         })
+      .when('/sloot-editor', {
+          templateUrl: 'views/slooteditor.html',
+          controller: 'SlooteditorCtrl'
+      })
       .otherwise({
           redirectTo: '/home'
         });

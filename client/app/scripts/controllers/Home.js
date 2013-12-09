@@ -4,7 +4,7 @@ angular.module('spriteslootApp')
   .controller('HomeCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
     $http
-      .get('sloot-content/sloot-content.json')
+      .get('/sloot-content')
       .success(function(data){
 
       $scope.clusters = data.slootCollection;
