@@ -2,6 +2,7 @@
 
 body {
   padding-top: 20px;
+  background: url("/public/images/bgYellow.png");
 }
 
 .phones {

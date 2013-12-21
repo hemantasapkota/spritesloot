@@ -1,9 +1,12 @@
+<ng-include src="'views/header.html'"></ng-include>
+<ng-include src="'views/search.html'"></ng-include>
+
 <div>
 
 <button type="button" class="btn btn-sml btn-success pull-right">Buy Now $2.80</button>
 
 <tabset style="margin-top:10px;">
-  <tab heading="Preview {{spriteTitle}}">
+  <tab heading="Preview {{spriteID}}">
     <br/>
     <p class="">Main player sprite suitable for 2D platformer games.</p>
       <b2webcanvas />
@@ -11,12 +14,12 @@
 
   <tab heading="Spritesheet">
     <br/>
-    <img ng-src="{{cgEntityModel.animations[0].spritesheetFile.resourceFile}}"/>
+    <img ng-src="public/{{cgEntityModel.animations[0].spritesheetFile.resourceFile}}"/>
   </tab>
 
   <tab heading="Integration">
     <br/>
-    <p>You can see how {{spriteTitle}} can be integrated with popular open source game frameworks.</p>
+    <p>You can see how {{spriteID}} can be integrated with popular open source game frameworks.</p>
 
     <ul class="list-unstyled list-inlined" >
       <li style="margin-bottom:5px;">

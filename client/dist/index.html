@@ -25,44 +25,9 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-         <a class="navbar-brand" href="#">Sprites Loot</a>
-        </div>
-
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#">Home</a>
-            </li>
-            <li class=""><a href="#">Blog</a></li>
-            <li><a href="#/sloot-editor">Sloot Editor</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Login</a></li>
-            <li><a href="#/">Upload</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+    <div class="container">
+      <div ng-view=""></div>
     </div>
-
-    <div class="container" ng-controller="SearchCtrl">
-        <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">
-          <form class="">
-            <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:2" placeholder="Search" class="form-control">
-          </form>
-        </div>
-
-        <div ng-view=""></div>
-    </div> <!-- /container -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -78,12 +43,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui/build/angular-ui.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-bootstrap3/ui-bootstrap-tpls.js"></script>
 
-        <script src="scripts/c07337e8.modules.js"></script>
+        <script src="scripts/f8dc454d.modules.js"></script>
 
-        <script src="scripts/6ab2fb25.scripts.js"></script>
+        <script src="scripts/759792e2.scripts.js"></script>
 
-        <script src="scripts/dbdb3c7b.slootLoader.js"></script>
+        <script src="scripts/7c593651.slootLoader.js"></script>
 </body>
 </html>

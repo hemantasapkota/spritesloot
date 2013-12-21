@@ -4,10 +4,10 @@ angular.module('spriteslootApp')
   .controller('HomeCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
     $http
-      .get('/sloot-content')
+      .get('/api/slootContent')
       .success(function(data){
 
-      $scope.clusters = data.slootCollection;
+      $scope.clusters = data;
       $scope.limitQty = 10;
       $scope.clusterFilter = $routeParams.clusterID;
 
@@ -15,7 +15,7 @@ angular.module('spriteslootApp')
       {
         angular
         .forEach($scope.clusters, function(cluster) {
-          if (cluster.title === $scope.clusterFilter) {
+          if (cluster.collectionTitle === $scope.clusterFilter) {
             $scope.limitQty = cluster.slootItems.length;
           }
         });

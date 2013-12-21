@@ -26,7 +26,11 @@ angular.module('spriteslootApp', [
           templateUrl: 'views/slooteditor.html',
           controller: 'SlooteditorCtrl'
       })
+      .when('/crunching', {
+          templateUrl: 'views/crunching.html',
+          controller: 'CrunchingCtrl'
+      })
       .otherwise({
-          redirectTo: '/home'
+          redirectTo: '/crunching'
         });
   });

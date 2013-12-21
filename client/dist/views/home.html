@@ -1,16 +1,19 @@
+<ng-include src="'views/header.html'"></ng-include>
+<ng-include src="'views/search.html'"></ng-include>
+
 <div ng-repeat="cluster in clusters | filter:clusterFilter">
  <div class="container">
    <div class="cluster-container" style="margin-top:10px">
     <div class="cluster">
        <div class="cluster-heading" style="font-size:28px;font-weight:100">
-        <a href="#/cluster/{{cluster.title}}" class="">{{cluster.title}}</a>
+        <a href="#/cluster/{{cluster.collectionTitle}}" class="">{{cluster.collectionTitle}}</a>
         <hr style="margin-top:0px">
        </div>
        <div class="row">
         <ul class="list-unstyled list-inline">
           <li ng-repeat="sprite in cluster.slootItems | limitTo:limitQty" class="span3" style="margin:10px">
-            <a href="#/sprites/{{sprite.id}}">
-              <div><img ng-src="{{sprite.imgUrl}}" class="img-responsive"></div>
+            <a href="#/sprites/{{cluster.collectionTitle}}_{{sprite.title}}">
+              <div><img ng-src="public/{{sprite.imgUrl}}" class="img-responsive"></div>
             </a>
           </li>
         </ul>

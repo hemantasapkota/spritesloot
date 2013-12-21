@@ -1,17 +1,15 @@
-
 /**
  * Module dependencies.
  */
-
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
-
-var slootContent = require('./public/sloot-content');
+  , path = require('path')
+  , mongoose = require('mongoose');
 
 var app = express();
+
+//Connect to the DB
+var db = mongoose.connect('mongodb://localhost/spritesloot');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -19,7 +17,12 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+
+  app.use(express.bodyParser({
+    uploadDir:'./public/',
+    keepExtensions: true
+  }));
+
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, '../client/dist/')));
@@ -31,13 +34,7 @@ app.configure('development', function(){
 
 app.use('/public', express.static(path.join(__dirname, '../server/public/')));
 
-app.get('/sloot-content', function(req, res) {
-  res.send(slootContent);
-});
-
-//Rest API
-//app.get('/', routes.index);
-//app.get('/users', user.list);
+require('./config/routes')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

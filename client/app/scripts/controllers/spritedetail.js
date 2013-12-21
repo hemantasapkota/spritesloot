@@ -9,19 +9,12 @@ angular.module('spriteslootApp')
     var collectionID = items[0];
     var spriteID = items[1];
 
-    /* Parse Sprite Title and Screen Name */
-    var spriteTitle = spriteID.replace('.cge', '');
-    var screenName = spriteID.replace('cge', 'cgs');
-
-    // url is in the form of: public/Pigs/Pig1.cge.json
-    // url is in the form of: public/Pigs/Pig1.cgs.json
-
     /* Get the screen file */
-    $scope.entityUrl = 'public/' + collectionID + '/' + spriteID + '.json';
-    $scope.entityImgUrl = 'public/' + collectionID + '/' + spriteID + '.png';
+    $scope.entityUrl = 'public/' + collectionID + '/' + spriteID + '.cge.json';
+    $scope.entityImgUrl = 'public/' + collectionID + '/' + spriteID + '.cge.png';
 
-    $scope.screenUrl = 'public/' +  collectionID + '/' + screenName + '.json';
-    $scope.spriteTitle = spriteTitle;
+    $scope.screenUrl = 'public/' +  collectionID + '/' + spriteID + '.cgs.json';
+    $scope.spriteID = spriteID;
 
     $http.get($scope.entityUrl).success(function(data) {
       $scope.cgEntityModel = data;

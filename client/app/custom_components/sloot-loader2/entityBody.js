@@ -18,7 +18,9 @@ Return Object:
 */
 entityBody.prototype.Create = function( shape, bodyDef, fixtureDef, returnObject, onFixtureCreated ) {
 
-	$.getJSON(shape.entityRefFile.resourceFile, function ( cgEntityModel ){
+  var refFile = 'public/' + shape.entityRefFile.resourceFile;
+
+	$.getJSON(refFile, function ( cgEntityModel ){
 
 		var defaultEA;
 		var scale = shape.bounds.width / ptmRatio;
@@ -61,7 +63,9 @@ entityBody.prototype.Create = function( shape, bodyDef, fixtureDef, returnObject
 		/* Custom fixture */
 		if (defaultEA.collisionType == "CUSTOM") {
 
-			$.getJSON(defaultEA.fixtureFile.resourceFile, function( cgFixtureModel ){
+                  var fixtureFile = 'public/' + defaultEA.fixtureFile.resourceFile;
+
+			$.getJSON(fixtureFile, function( cgFixtureModel ){
 
 				/* Set cgFixtureModel to return object */
 				returnObject.cgFixtureModel = cgFixtureModel;
