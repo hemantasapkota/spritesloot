@@ -9,7 +9,8 @@ var express = require('express')
 var app = express();
 
 //Connect to the DB
-var db = mongoose.connect('mongodb://localhost/spritesloot');
+// var db = mongoose.connect('mongodb://localhost/spritesloot');
+var db = mongoose.connect('mongodb://nodejitsu:55b19a3a28c916b7d586b70fe7147098@linus.mongohq.com:10055/nodejitsudb514777344');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -25,7 +26,7 @@ app.configure(function(){
 
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, '../client/dist/')));
+  app.use(express.static(path.join(__dirname, './client/')));
 });
 
 app.configure('development', function(){
