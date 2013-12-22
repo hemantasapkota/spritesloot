@@ -14,7 +14,7 @@ angular.module('spriteslootApp')
 
     $scope.addSlide('public/images/screenshots/EdPreview.png', 'Sloot Editor Main');
     $scope.addSlide('public/images/screenshots/EdRender.png', 'Render Level');
-    $scope.addSlide('public/images/screenshots/EdEntity.png', 'Render Level');
-    $scope.addSlide('public/images/screenshots/EdScripting.png', 'Scripting Preview');
+    $scope.addSlide('public/images/screenshots/EdEntity.png', 'Edit Entity');
+    $scope.addSlide('public/images/screenshots/EdScripting.png', 'Lua Scripting');
 
   }]);

@@ -1,7 +1,7 @@
-<ng-include src="'views/header.html'"></ng-include>
+<ng-include src="'views/header-crunching.html'"></ng-include>
 
-<p>We're building a marketplace of high quality animated sprites for building mobile and web games.</p>
-<p><a href="#/sloot-editor">Sloot Editor</a> is our open-source Box2D editor with light support for entites and scripting.</p>
+<!-- <p>We're building a marketplace of high quality animated sprites for building mobile and web games.</p> -->
+<!-- <p><a href="#/sloot-editor">Sloot Editor</a> is our open-source Box2D editor with light support for entites and scripting.</p> -->
 
 <div ng-controller="CrunchingCtrl">
 
@@ -9,8 +9,7 @@
     <slide ng-repeat="slide in slides" active="slide.active">
       <img ng-src="{{slide.image}}" style="margin:auto;">
       <div class="carousel-caption">
-      <h4>Slide {{$index}}</h4>
-      <p>{{slide.text}}</p>
+      <h2>{{slide.text}}</h2>
       </div>
     </slide>
   </carousel>
