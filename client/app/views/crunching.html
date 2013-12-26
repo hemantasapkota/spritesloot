@@ -1,16 +1,103 @@
-<img src="public/images/head1.png"/>
-
-<div ng-controller="CrunchingCtrl" >
-
-  <carousel interval="myInterval">
-    <slide ng-repeat="slide in slides" active="slide.active">
-      <img ng-src="{{slide.image}}" style="margin:auto;">
-      <div class="carousel-caption">
-      <h2>{{slide.text}}</h2>
+<!-- Pre-launch Header -->
+<!-- Old bg color: #FFEEAD -->
+<div id="head1" class="container-fluid" style="background-color:#e9be25;height:750px;background-image:url('/images/bgCity.png');">
+  <div class="container" >
+    <div class="row" >
+      <div class="col-md-12">
+        <h1 id="header">Sprites Loot Marketplace</h1>
+        <p class="lead">Get high quality animated sprites for your mobile and web games</p>
       </div>
-    </slide>
-  </carousel>
+    </div>
 
+    <form class="form-horizontal" role="form" >
+      <div class="form-group">
+        <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+          <input class="form-control input-lg" placeholder="Enter your email" class="form-control" type="email" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-lg-1">
+          <button type="button" class="btn btn-info btn-lg">Subscribe</button>
+        </div>
+      </div>
+    </form>
+  </div> <!-- End Container -->
+</div> <!-- End Fluid Container -->
+
+<!-- Github ribbon -->
+<div class="container-fluid" style="position:relative">
+  <div class="row">
+    <a href="https://github.com/hemantasapkota/sloot-editor">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" 
+      src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
+    </a>
+  </div>
 </div>
 
+<!-- Sloot Editor -->
+<div id="head2" class="container-fluid" style="background-color:#FFCC5C">
+  <div class="container">
 
+    <div style="text-align:center;">
+      <h2>Sloot Editor Beta</h2>
+      <p class="lead">Open Source Box2D Editor</p>
+      <p><a class="btn btn-lg btn-success" role="button" href="https://github.com/hemantasapkota/sloot-editor/releases" >Download</a></p>
+    </div>
+
+    <carouselstatic 
+      images="url('images/screenshots/SlootEditorMain.png'),url('images/screenshots/SlootEditorRender.png'),url('images/screenshots/SlootEditorEntity.png'),
+        url('images/screenshots/SlootEditorScripting.png')"
+
+      description="Sloot Editor Main, Render Screen, Entity Editor, Lua Scripting">
+
+      </carouselstatic>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Features</h2>
+        <ul>
+          <li>Sprietsheet Extraction</li>
+          <li>Entities Animation</li>
+          <li>Collision Shapes</li>
+          <li>Support for <a href="">Physics Editor</a> generated fixtures</li>
+          <li>Box2D Joints Support</li>
+          <li>Experimental Lua scripting support</li>
+          <li>Export to JSON</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <h2>Technology</h2>
+        <ul>
+          <li><a href="#">Eclipse RCP</a> as a platform</li>
+          <li><a href="#">Eclipse GEF</a> for the Screen Editor</li>
+          <li><a href="#">LibGdx</a> for rendering in the desktop</li>
+          <li><a href="#">Google Protobuf</a> for file formats</li>
+          <li><a href="#">LuaJ</a> for executing lua scripts</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <h2>Limitation</h2>
+        <ul>
+          <li>Cannot rotate entities in editor.</li>
+          <li>Joint support is basic.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<div class="container-fluid">
+  <div class="container">
+      <h2>About</h2>
+      <p class="lead">
+        We're building a marketplace for high quality animated sprites that integrates deeply with existing open-source game frameworks.
+      </p>
+      <p class="lead">
+        As we're currently in closed private beta, Please <a href="/#/crunching#header">subscribe</a> to get updates.
+      </p>
+  </div>
+</div>

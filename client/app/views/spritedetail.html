@@ -1,40 +1,38 @@
 <ng-include src="'views/header.html'"></ng-include>
 <ng-include src="'views/search.html'"></ng-include>
 
-<div>
+<div class="container">
+  <button type="button" class="btn btn-sml btn-success pull-right">Buy Now $2.80</button>
 
-<button type="button" class="btn btn-sml btn-success pull-right">Buy Now $2.80</button>
+  <tabset style="margin-top:10px;">
+    <tab heading="Preview {{spriteID}}">
+      <br/>
+      <p class="">Main player sprite suitable for 2D platformer games.</p>
+        <b2webcanvas />
+    </tab>
 
-<tabset style="margin-top:10px;">
-  <tab heading="Preview {{spriteID}}">
-    <br/>
-    <p class="">Main player sprite suitable for 2D platformer games.</p>
-      <b2webcanvas />
-  </tab>
+    <tab heading="Spritesheet">
+      <br/>
+      <img ng-src="public/{{cgEntityModel.animations[0].spritesheetFile.resourceFile}}"/>
+    </tab>
 
-  <tab heading="Spritesheet">
-    <br/>
-    <img ng-src="public/{{cgEntityModel.animations[0].spritesheetFile.resourceFile}}"/>
-  </tab>
+    <tab heading="Integration">
+      <br/>
+      <p>You can see how {{spriteID}} can be integrated with popular open source game frameworks.</p>
 
-  <tab heading="Integration">
-    <br/>
-    <p>You can see how {{spriteID}} can be integrated with popular open source game frameworks.</p>
+      <ul class="list-unstyled list-inlined" >
+        <li style="margin-bottom:5px;">
+          <button type="button" class="btn btn-med btn-info"><a href="/frameworks/cocos2d-x-2.2.1-sloot.tar.gz">Download Cocos2D-x (IOS/Android)</a></button>
+        </li>
 
-    <ul class="list-unstyled list-inlined" >
-      <li style="margin-bottom:5px;">
-        <button type="button" class="btn btn-med btn-info"><a href="/frameworks/cocos2d-x-2.2.1-sloot.tar.gz">Download Cocos2D-x (IOS/Android)</a></button>
-      </li>
+        <li style="margin-bottom:5px;">
+          <button type="button" class="btn btn-med btn-info">Download openFrameworks (IOS/Android)</button>
+        </li>
 
-      <li style="margin-bottom:5px;">
-        <button type="button" class="btn btn-med btn-info">Download openFrameworks (IOS/Android)</button>
-      </li>
-
-      <li style="margin-bottom:5px;">
-        <button type="button" class="btn btn-med btn-info">Download LibGDX (IOS/Android)</button>
-      </li>
-    </ul>
-  </tab>
-</tabset>
-
+        <li style="margin-bottom:5px;">
+          <button type="button" class="btn btn-med btn-info">Download LibGDX (IOS/Android)</button>
+        </li>
+      </ul>
+    </tab>
+  </tabset>
 </div>

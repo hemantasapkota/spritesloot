@@ -6,7 +6,8 @@ angular.module('spriteslootApp', [
   'ngSanitize',
   'ngRoute',
   'ui',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngFitText'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,8 +28,7 @@ angular.module('spriteslootApp', [
           controller: 'SlooteditorCtrl'
       })
       .when('/crunching', {
-          templateUrl: 'views/crunching.html',
-          controller: 'CrunchingCtrl'
+          templateUrl: 'views/crunching.html'
       })
       .otherwise({
           redirectTo: '/crunching'
