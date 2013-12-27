@@ -1,6 +1,6 @@
 {
-  "name": "server",
-  "version": "0.0.1-12",
+  "name": "spritesloot",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -23,5 +23,9 @@
   "subdomain": "sloot",
   "engines": {
     "node": "0.10.x"
-  }
+  },
+  "description": "Sprites Loot Marketplace",
+  "main": "app.js",
+  "author": "Hemanta Sapkota",
+  "license": "BSD-2-Clause"
 }
