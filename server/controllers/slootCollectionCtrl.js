@@ -10,15 +10,10 @@ var mongoose = require('mongoose'),
       });
     };
 
-    exports.find = function(req, res, developerId, collectionTitle) {
-      //Find collection based on developer ID and Collection Title.
-    };
-
     exports.create = function(req, res) {
       var col = new SlootCollection(req.body);
 
       SlootCollection.find({"developerId" : col.developerId, "collectionTitle" : col.collectionTitle}, function(err, docs) {
-
         if (docs.length > 0) {
           SlootCollection.remove({"developerId" : col.developerId, "collectionTitle" : col.collectionTitle}, function(err, rm) {
           });
@@ -26,13 +21,11 @@ var mongoose = require('mongoose'),
 
         //Save
         col.save(function(err){
-          if (err) {
-            return res.send({'errror' : 'Could not create collection.'});
+          if (err) { return res.send({'errror' : 'Could not create collection.'});
           } else {
             res.send(col._id);
           }
         });
-
       });
     };
 

@@ -1,0 +1,33 @@
+<!-- Landing Page -->
+<div id="head1" class="container-fluid" style="background-color:#e9be25;height:750px;background-image:url('/images/448b7e76.bgCity.png')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 id="header">Sprites Loot Marketplace</h1>
+        <p class="lead">Get high quality animated sprites for your mobile and web games</p>
+      </div>
+    </div>
+
+    <form class="form-horizontal well col-xs-10 col-sm-4 col-md-4 col-lg-4" role="form" style="">
+      <div class="form-group col-md-12">
+        <input id="txtEmail" class="form-control input-lg" placeholder="Enter your email" type="email" ng-model="email" oninput="doCollapse()">
+      </div>
+
+      <div class="form-group col-md-12" collapse="isCollapsed">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox" ng-model="isIndieGameDev">
+          </span>
+          <input type="text" class="form-control input-lg" value="I'm an indie game developer" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="form-group col-lg-1">
+        <button type="button" class="btn btn-info btn-lg" ng-click="subscribe()">Subscribe</button>
+      </div>
+    </form> <!-- End Form -->
+  </div> <!-- End Container -->
+</div> <!-- End Fluid Container -->
+
+<div ng-include="'views/landingPageSlootEditor.html'"></div>
+<div ng-include="'views/landingPageFooter.html'"></div>

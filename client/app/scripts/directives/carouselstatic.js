@@ -6,7 +6,9 @@ angular.module('spriteslootApp')
       templateUrl: 'views/carouselstatic.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
+
         scope.myInterval = 5000;
+
         var slides = scope.slides = [];
         scope.addSlide = function(img, text) {
           slides.push({

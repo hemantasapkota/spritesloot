@@ -8,9 +8,12 @@ var express = require('express')
 
 var app = express();
 
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development',
+    config = require('./config/config');
+
 //Connect to the DB
-// var db = mongoose.connect('mongodb://localhost/spritesloot');
-var db = mongoose.connect('mongodb://nodejitsu:55b19a3a28c916b7d586b70fe7147098@linus.mongohq.com:10055/nodejitsudb514777344');
+//var db = mongoose.connect('mongodb://nodejitsu:55b19a3a28c916b7d586b70fe7147098@linus.mongohq.com:10055/nodejitsudb514777344');
+var db = mongoose.connect(config.db);
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -18,7 +21,6 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-
   app.use(express.bodyParser({
     uploadDir:'./public/',
     keepExtensions: true
