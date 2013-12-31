@@ -4,3 +4,5 @@ node_modules
 bower_components
 frameworks
 dist/*
+server/public/*
+
