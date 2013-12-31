@@ -1,6 +1,6 @@
 {
   "name": "spritesloot",
-  "version": "0.0.1-24",
+  "version": "0.0.1-30",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -21,7 +21,7 @@
     "load-grunt-tasks": "~0.2.0"
   },
   "subdomain": "sloot",
-  "domain": [
+  "domains": [
     "spritesloot.com",
     "www.spritesloot.com"
   ],
