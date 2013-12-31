@@ -1,6 +1,6 @@
 {
-  "name": "server",
-  "version": "0.0.1-15",
+  "name": "spritesloot",
+  "version": "0.0.1-24",
   "private": true,
   "scripts": {
     "start": "node app"

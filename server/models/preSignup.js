@@ -6,7 +6,8 @@ Schema = mongoose.Schema;
 var PreSignupSchema = new Schema({
   email: String,
   isIndieGameDev: Boolean,
-  prefGameFramework: String
+  gameFrameworks: [],
+  others: String
 });
 
 mongoose.model('PreSignup', PreSignupSchema);
