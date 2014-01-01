@@ -16,5 +16,6 @@ module.exports = function(app) {
   app.get('/api/slootContent', slootCollectionCtrl.all);
   app.post('/api/slootContent', slootCollectionCtrl.create);
   app.put('/api/slootContent/:item', slootCollectionCtrl.upload);
-  app.post('/api/preSignup', preSignupCtrl.preSignup);
+  app.post('/api/preSignups', preSignupCtrl.preSignup);
+  app.get('/api/preSignups', preSignupCtrl.all);
 }

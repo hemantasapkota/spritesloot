@@ -1,5 +1,12 @@
-var mongoose = require('mongoose'), _ = require('underscore'),
+var mongoose = require('mongoose'),
+    _ = require('underscore'),
     PreSignup = mongoose.model('PreSignup');
+
+    exports.all = function(req, res) {
+      PreSignup.find({}, 'isGameDev gameFrameworks', function(err, ups) {
+        res.send(ups);
+      });
+    };
 
     exports.preSignup = function(req, res) {
       var newSignup = new PreSignup(req.body);

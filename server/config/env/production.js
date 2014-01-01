@@ -1,7 +1,7 @@
 module.exports = {
-    db: "mongodb://localhost/mean",
+    db: process.env.MONGOHQ_URL,
     app: {
-        name: "MEAN - A Modern Stack - Production"
+        name: "Sprites Loot Marketplace"
     },
     facebook: {
         clientID: "APP_ID",

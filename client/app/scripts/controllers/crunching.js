@@ -13,16 +13,44 @@ angular.module('spriteslootApp')
       {name: 'Game Salad', selected: false},
       {name: 'Construct2', selected: false}
     ];
-
     $scope.others = "";
+    $scope.showSpinner=false;
+    $scope.isGameDev=false;
 
-    $scope.showSubscribeError = false;
-    $scope.subscribeAlertMsg = "";
+    //Error mgmt
+    $scope.showError = function(msg) {
+      $scope.showSubscribeError = true;
+      $scope.subscribeAlertMsg = msg;
+      window.setTimeout($scope.resetError, 1000); //auto clear the alert
+    }
 
+    $scope.resetError = function() {
+      $scope.showSubscribeError = false;
+      $scope.subscribeAlertMsg = "";
+    }
+    $scope.resetError(); //reset error at the start
+    //End error mgmt
+
+    //Modal Instance Management
+    var ModalInstanceCtrl = ['$scope', '$modalInstance', function($scope, $modalInstance) {
+      $scope.cancel  = function() {
+        $modalInstance.dismiss('Cancelled');
+      };
+
+      $scope.ok = function() {
+        $modalInstance.close('next');
+        var el = document.getElementById('editor');
+        el.scrollIntoView();
+      };
+    }]; //End Modal Instance Ctrl
+
+    //Subscbribe method
     $scope.subscribe = function() {
       if ($scope.email === undefined || $scope.email.trim().length === 0) {
         return;
       }
+
+      $scope.showSpinner = true;
 
       //Filter the selection into an array
       var filter = $filter('filter');
@@ -32,29 +60,29 @@ angular.module('spriteslootApp')
         selection.push(item.name);
       });
 
-      var data = {'email' : $scope.email, 'isIndieGameDev' : $scope.isIndieGameDev || false, 'gameFrameworks' : selection, 'others' : $scope.others};
+      var data = {'email' : $scope.email, 'isGameDev' : $scope.isGameDev, 'gameFrameworks' : selection, 'others' : $scope.others};
 
-      $http.post('/api/preSignup', data)
+      $http.post('/api/preSignups', data)
 
       .success(function(data){
 
+        $scope.showSpinner = false;
+
         if (data.error !== undefined) {
-          $scope.subscribeAlertMsg =  data.error.trim();
-          $scope.showSubscribeError = true;
+          $scope.showError(data.error.trim());
           return;
         }
 
         $modal.open({
-          templateUrl: 'thankyou.html'
+          templateUrl: 'thankyou.html',
+          controller: ModalInstanceCtrl
         });
 
       })
-
       .error(function(error) {
-        $scope.subscribeAlertMsg = 'An error occurred while sending the request';
-        $scope.showSubscribeError = true;
+        $scope.showError('An error occurred while sending the request.');
+        $scope.showSpinner=false;
       }); //End HTTP
-
     };
-
   }]);
+

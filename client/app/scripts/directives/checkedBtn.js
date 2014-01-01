@@ -30,6 +30,10 @@ angular.module('spriteslootApp')
           if (scope.$parent.gf !== undefined) {
             scope.$parent.gf.selected = newValue;
           }
+
+          if (scope.$parent.isGameDev !== undefined) {
+            scope.$parent.isGameDev = newValue;
+          }
         });
       } //End Link
     };

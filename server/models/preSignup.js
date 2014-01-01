@@ -5,7 +5,7 @@ Schema = mongoose.Schema;
 
 var PreSignupSchema = new Schema({
   email: String,
-  isIndieGameDev: Boolean,
+  isGameDev: Boolean,
   gameFrameworks: [],
   others: String
 });
