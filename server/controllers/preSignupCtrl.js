@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
     PreSignup = mongoose.model('PreSignup');
 
     exports.all = function(req, res) {
-      PreSignup.find({}, 'isGameDev gameFrameworks', function(err, ups) {
+      PreSignup.find({}, 'isGameDev gameFrameworks -_id', function(err, ups) {
         res.send(ups);
       });
     };

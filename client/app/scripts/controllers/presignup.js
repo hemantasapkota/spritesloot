@@ -10,6 +10,7 @@ angular.module('spriteslootApp')
     .success(function(data) {
 
       $scope.preSignupData = data;
+      $scope.total = data.length;
     });
 
   }]);
