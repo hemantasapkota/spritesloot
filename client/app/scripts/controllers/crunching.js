@@ -30,6 +30,12 @@ angular.module('spriteslootApp')
     }
     $scope.resetError(); //reset error at the start
     //End error mgmt
+    //
+
+    $scope.focusPresignupForm = function() {
+        var el = document.getElementById('header');
+        el.scrollIntoView();
+    };
 
     //Modal Instance Management
     var ModalInstanceCtrl = ['$scope', '$modalInstance', function($scope, $modalInstance) {

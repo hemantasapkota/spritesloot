@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <form name="presignup" class="form-horizontal well col-xs-12 col-sm-5 col-md-5 col-lg-4" role="form" >
+    <form id="presignup" name="presignup" class="form-horizontal well col-xs-12 col-sm-5 col-md-5 col-lg-4" role="form" >
       <div class="form-group col-md-12">
         <input
           id="txtEmail"
@@ -53,6 +53,8 @@
       <div class="form-group col-md-12">
         <div class="alert alert-danger" ng-show="showSubscribeError">{{subscribeAlertMsg}}</div>
       </div>
+
+      <div ng-include="'views/followTwitter.html'"></div>
 
       <!-- Thank You message -->
       <script type="text/ng-template" id="thankyou.html">
