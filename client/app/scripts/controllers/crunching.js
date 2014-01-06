@@ -52,6 +52,11 @@ angular.module('spriteslootApp')
 
     //Subscbribe method
     $scope.subscribe = function() {
+      console.log("clicked suscribe");
+
+      console.log($scope.email);
+
+
       if ($scope.email === undefined || $scope.email.trim().length === 0) {
         return;
       }

@@ -1,0 +1,71 @@
+<form ng-controller="CrunchingCtrl" id="presignup" name="presignup" class="form-horizontal well" role="form" >
+  <div class="form-group col-md-12">
+    <input
+      id="txtEmail"
+      name="txtEmail"
+      required
+      class="form-control"
+      placeholder="Enter your email"
+      type="email"
+      ng-model="email"
+      ng-focus="oneTimeCollapse()"/>
+  </div>
+
+  <div bs3collapse class="form-group col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <checkedbtn btnclass="btn btn-default btn-block" ng-model="isGameDev" btntext="I'm a game developer"></checkedbtn>
+      </li>
+      <li class="list-group-item">
+        <p class="static-form-control" style="color:black">My Preferred Frameworks</p>
+        <checkedbtn
+          ng-repeat="gf in gameFrameworks"
+          btnstyle="margin:2px;"
+          btntext="{{gf.name}}"
+          btnclass="btn btn-primary btn-xs">
+        </checkedbtn>
+        <input type="text" class="form-control input-sm" ng-model="others" placeholder="Others"/>
+      </li>
+    </ul>
+  </div> <!-- End Collapse Panel -->
+
+  <div class="form-group col-md-12">
+    <button type="button"
+      class="btn btn-info btn-lg"
+      ng-click="subscribe()"
+      ng-disabled="presignup.txtEmail.$error.email">
+      Subscribe
+    </button>
+    <span ng-show="showSpinner" class="col-xs-offset-1 col-md-offset-1" us-spinner="{radius:5, width:8, length:5}"></span>
+  </div>
+
+  <div class="form-group col-md-12">
+    <div class="alert alert-danger" ng-show="showSubscribeError">{{subscribeAlertMsg}}</div>
+  </div>
+
+  <div ng-include="'views/followTwitter.html'"></div>
+
+  <!-- Thank You message -->
+  <script type="text/ng-template" id="thankyou.html">
+     <div class="modal-header">
+       <h3 style="color:rgb(19, 122, 143);">Thanks</h3>
+     </div>
+     <div class="modal-body">
+       <p class="lead">
+         We're working hard to get the marketplace up and running. You'll be hearing from us soon.
+       </p>
+       <p class="lead">
+         In the meantime, why not check out <span class="label label-success">Sloot Editor</span> - Our open source Box2D editor.
+       </p>
+       <p class="lead">
+         If you are a game developer, then Sloot Editor could help in creating your games.
+         If you're a graphics/sprites designer, you can use it to upload and sell your sprites.
+       </p>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+       <button type="button" class="btn btn-primary" ng-click="ok()">Take Me to Sloot Editor</button>
+     </div>
+  </script>
+</form> <!-- End Form -->
+
